@@ -19,7 +19,7 @@ echo "##########################################################################
 tput sgr0
 
 # Define AUR array
-AUR=("paru" "yay" "pikaur" "aura" "trizen")
+AUR=("yay" "yay-bin" "paru" "paru-bin" "trizen" "pikaur" "aurman" "pacaur" "pakku" "aura")
 
 # Print AUR array in multiple columns
 num_columns=2
@@ -51,6 +51,7 @@ IFS=' ' read -ra aur_nums <<<"${aur_nums_str}"
 # Check if any valid AUR numbers were selected
 invalid_selection=0
 selected_aur=()
+
 for num in "${aur_nums[@]}"; do
 	if ((num < 1 || num > ${#AUR[@]})); then
 		tput setaf 9
@@ -58,17 +59,24 @@ for num in "${aur_nums[@]}"; do
 		echo "################# Invalid selection: ${num}"
 		echo "######################################################################################################"
 		tput sgr0
+
 		invalid_selection=1
 	else
 		selected_aur+=("${AUR[num - 1]}")
 	fi
 done
+
 if ((invalid_selection == 0)); then
 	tput setaf 13
-	echo -e "########################\n AUR to be installed...\n########################\n* ${selected_aur[0]}"
+	echo "########################"
+	echo " AUR to be installed..."
+	echo "########################"
+	echo "* ${selected_aur[0]}"
+
 	for ((i = 1; i < ${#selected_aur[@]}; i++)); do
 		echo "* ${selected_aur[i]}"
 	done
+
 	echo "########################"
 	tput sgr0
 	echo
@@ -84,28 +92,11 @@ if ((invalid_selection == 0)); then
 		echo "######################################################################################################"
 		tput sgr0
 		echo
-
-		case ${aur} in
-		paru | yay | aura)
-			git clone https://aur.archlinux.org/"${aur}"-bin.git "/tmp/${aur}-bin"
-			cd "/tmp/${aur}-bin" || exit 1
-			makepkg -si --noconfirm --needed
-			;;
-		pikaur)
-			git clone https://github.com/actionless/"${aur}".git "/tmp/${aur}"
-			cd "/tmp/${aur}" || exit 1
-			makepkg -fsri --noconfirm --needed
-			;;
-		trizen)
-			git clone https://aur.archlinux.org/"${aur}".git "/tmp/${aur}"
+		(
+			git clone "https://aur.archlinux.org/${aur}.git" "/tmp/${aur}"
 			cd "/tmp/${aur}" || exit 1
 			makepkg -si --noconfirm --needed
-			;;
-		*)
-			exit 1
-			;;
-
-		esac
+		)
 	done
 
 	echo
