@@ -69,8 +69,8 @@ y | Y | yes | Yes | YES | 1)
 
 		echo
 
-		#sudo bash -c "echo /swap/swapfile  swap    swap    defaults    0   0 >> /etc/fstab"
-		echo "/swap/swapfile                            swap            swap    defaults      0       0" | sudo tee -a /etc/fstab
+		#sudo bash -c "echo /swap/swapfile  none    swap    defaults    0   0 >> /etc/fstab"
+		echo "/swap/swapfile                            none            swap    defaults      0       0" | sudo tee -a /etc/fstab
 
 		echo
 
