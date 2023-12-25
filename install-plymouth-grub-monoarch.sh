@@ -39,7 +39,6 @@ REPLACE='GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet splash vt.global_cursor_de
 sudo sed -i "s/${FIND}/${REPLACE}/g" /etc/default/grub
 
 sudo plymouth-set-default-theme -R monoarch
-
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "######################################################################################################"

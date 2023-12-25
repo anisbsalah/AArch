@@ -8,7 +8,7 @@
 # DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
 ##################################################################################################################
-# CURRENT_DIR="$(pwd)"
+CURRENT_DIR="$(pwd)"
 ##################################################################################################################
 
 echo
@@ -19,7 +19,7 @@ echo "##########################################################################
 tput sgr0
 
 # Define AUR array
-AUR=("yay" "yay-bin" "paru" "paru-bin" "trizen" "pikaur" "aurman" "pacaur" "pakku" "aura")
+AUR=("yay" "yay-bin" "paru" "paru-bin" "trizen" "pikaur" "pakku" "aurman" "aura" "pacaur")
 
 # Print AUR array in multiple columns
 num_columns=2
@@ -82,7 +82,7 @@ if ((invalid_selection == 0)); then
 	echo
 
 	# Install dependencies
-	sudo pacman -S --noconfirm --needed base-devel git
+	sudo pacman -Sy --noconfirm --needed base-devel git
 
 	for aur in "${selected_aur[@]}"; do
 		echo
@@ -97,6 +97,14 @@ if ((invalid_selection == 0)); then
 			cd "/tmp/${aur}" || exit 1
 			makepkg -si --noconfirm --needed
 		)
+
+		case ${aur} in
+		"pacaur")
+			mkdir -p "${HOME}/.config/pacaur"
+			cp "${CURRENT_DIR}/Personal/settings/pacaur/config" "${HOME}/.config/pacaur/"
+			;;
+		*) ;;
+		esac
 	done
 
 	echo

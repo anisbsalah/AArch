@@ -1,1 +1,1 @@
-# All Arch Linux based
+# All Arch Linux based Distros

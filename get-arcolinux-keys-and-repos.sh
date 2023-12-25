@@ -11,11 +11,11 @@
 # CURRENT_DIR="$(pwd)"
 ##################################################################################################################
 
-sudo pacman -S --noconfirm --needed wget
+sudo pacman -Sy --noconfirm --needed wget
 
 echo
 tput setaf 3
-echo "Getting the ArcoLinux keys from the ArcoLinux repo..."
+echo "[*] Getting the ArcoLinux keys from the ArcoLinux repo..."
 tput sgr0
 echo
 
@@ -26,7 +26,7 @@ sudo pacman -U --noconfirm --needed /tmp/arcolinux-keyring-20251209-3-any.pkg.ta
 
 echo
 tput setaf 3
-echo "Getting the latest arcolinux mirrors file..."
+echo "[*] Getting the latest arcolinux mirrors file..."
 tput sgr0
 echo
 
