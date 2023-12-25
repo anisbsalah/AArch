@@ -16,3 +16,4 @@ silent=false                        # silence output
 sortby=popularity                   # sort method (name|votes|popularity)
 sortorder=descending                # sort order (ascending|descending)
 sudoloop=true                       # prevent sudo timeout
+
