@@ -84,27 +84,36 @@ if ((invalid_selection == 0)); then
 	# Install dependencies
 	sudo pacman -Sy --noconfirm --needed base-devel git
 
+	# Install selected AUR helper(s)
 	for aur in "${selected_aur[@]}"; do
 		echo
-		tput setaf 3
-		echo "######################################################################################################"
-		echo "################# Installing '${aur}'..."
-		echo "######################################################################################################"
-		tput sgr0
-		echo
-		(
-			git clone "https://aur.archlinux.org/${aur}.git" "/tmp/${aur}"
-			cd "/tmp/${aur}" || exit 1
-			makepkg -si --noconfirm --needed
-		)
+		if pacman -Qi "${aur%-bin}" &>/dev/null || pacman -Qi "${aur}" &>/dev/null; then
+			tput setaf 2
+			echo "######################################################################################################"
+			echo "################# '${aur%-bin}' is already installed"
+			echo "######################################################################################################"
+			tput sgr0
+		else
+			tput setaf 3
+			echo "######################################################################################################"
+			echo "################# Installing '${aur}'..."
+			echo "######################################################################################################"
+			tput sgr0
+			echo
+			(
+				git clone "https://aur.archlinux.org/${aur}.git" "/tmp/${aur}"
+				cd "/tmp/${aur}" || exit 1
+				makepkg -si --noconfirm --needed
+			)
 
-		case ${aur} in
-		"pacaur")
-			mkdir -p "${HOME}/.config/pacaur"
-			cp "${CURRENT_DIR}/Personal/settings/pacaur/config" "${HOME}/.config/pacaur/"
-			;;
-		*) ;;
-		esac
+			case ${aur} in
+			"pacaur")
+				mkdir -p "${HOME}/.config/pacaur"
+				cp "${CURRENT_DIR}/Personal/settings/pacaur/config" "${HOME}/.config/pacaur/"
+				;;
+			*) ;;
+			esac
+		fi
 	done
 
 	echo

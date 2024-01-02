@@ -22,7 +22,7 @@ echo "##########################################################################
 tput sgr0
 echo
 
-read -rep "${BOLD}:: Enter your timezone (e.g. Africa/Tunis): ${RESET}" TIMEZONE
+read -erp "${BOLD}:: Enter your timezone (e.g. Africa/Tunis): ${RESET}" TIMEZONE
 timedatectl --no-ask-password set-timezone "${TIMEZONE}"
 timedatectl --no-ask-password set-ntp 1
 
@@ -34,7 +34,7 @@ echo "##########################################################################
 tput sgr0
 echo
 
-read -rep "${BOLD}:: Enter your keyboard layout (e.g. fr): ${RESET}" KEYBOARD_LAYOUT
+read -erp "${BOLD}:: Enter your keyboard layout (e.g. fr): ${RESET}" KEYBOARD_LAYOUT
 localectl --no-ask-password set-keymap "${KEYBOARD_LAYOUT}"
 localectl --no-ask-password set-x11-keymap "${KEYBOARD_LAYOUT}"
 localectl --no-ask-password set-locale LANG=en_US.UTF-8 LC_ADDRESS=en_US.UTF-8 LC_IDENTIFICATION=en_US.UTF-8 LC_MEASUREMENT=en_US.UTF-8 LC_MONETARY=en_US.UTF-8 LC_NAME=en_US.UTF-8 LC_NUMERIC=en_US.UTF-8 LC_PAPER=en_US.UTF-8 LC_TELEPHONE=en_US.UTF-8 LC_TIME=en_US.UTF-8

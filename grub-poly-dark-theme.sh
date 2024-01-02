@@ -24,7 +24,7 @@ grep "GRUB_BACKGROUND=" /etc/default/grub >/dev/null 2>&1 && sudo sed -i '/GRUB_
 
 sudo pacman -S --needed --noconfirm wget
 wget -P /tmp https://github.com/anisbsalah/poly-dark/raw/master/install.sh
-bash /tmp/install.sh
+bash /tmp/install.sh --lang English
 
 echo
 tput setaf 2

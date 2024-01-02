@@ -26,7 +26,6 @@ tput sgr0
 echo
 
 sudo pacman -S --noconfirm --needed wget
-
 wget -qO- https://git.io/papirus-icon-theme-install | sh
 
 echo
@@ -36,7 +35,6 @@ echo "##########################################################################
 echo
 
 sudo pacman -S --noconfirm --needed git
-
 git clone https://github.com/Foggalong/hardcode-fixer.git /tmp/hardcode-fixer && cd /tmp/hardcode-fixer && sudo ./fix.sh
 
 echo
@@ -51,15 +49,11 @@ echo
 
 ### Manual installation
 sudo pacman -S --needed --noconfirm base-devel gobject-introspection gtk3 librsvg python python-cairosvg python-gobject meson ninja imagemagick inkscape
-
 git clone https://github.com/bil-elmoussaoui/Hardcode-Tray /tmp/Hardcode-Tray && cd /tmp/Hardcode-Tray && meson builddir --prefix=/usr
-
 sudo ninja -C builddir install
-
 echo
 echo
 sudo -E hardcode-tray
-
 #sudo -E hardcode-tray --conversion-tool RSVGConvert --size 22 --theme Papirus-Dark
 
 echo
@@ -99,7 +93,7 @@ echo "##########################################################################
 tput sgr0
 echo
 
-sudo apt install -y git
+sudo pacman -S --noconfirm --needed git
 git clone https://github.com/arcolinux/a-candy-beauty-icon-theme.git /tmp/candy
 sudo cp -r /tmp/candy/usr/share/icons/* /usr/share/icons/
 
