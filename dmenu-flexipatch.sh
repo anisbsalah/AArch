@@ -14,13 +14,23 @@
 echo
 tput setaf 3
 echo "######################################################################################################"
-echo "################# Installing dmenu dependencies..."
+echo "################# Installing dmenu-flexipatch..."
 echo "######################################################################################################"
 tput sgr0
 echo
-
+tput setaf 3
+echo '[*] Installing dependencies...'
+tput sgr0
+echo
 sudo pacman -S --needed --noconfirm libx11 libxft libxinerama
-
+echo
+tput setaf 3
+echo '[*] Cloning github project...'
+tput sgr0
+echo
+git clone https://github.com/anisbsalah/dmenu-flexipatch.git "${HOME}/.config/dmenu-flexipatch"
+cd "${HOME}/.config/dmenu-flexipatch" || exit 1
+sudo make install
 echo
 tput setaf 2
 echo "######################################################################################################"
