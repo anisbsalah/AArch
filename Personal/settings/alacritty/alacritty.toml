@@ -27,6 +27,6 @@ history = 50000
 
 [keyboard]
 bindings = [
-{ key = "F11", action = "ToggleFullscreen" },
-{ key = "T", mods = "Control|Shift", action = "CreateNewWindow" },
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "T", mods = "Control|Shift", action = "CreateNewWindow" },
 ]
