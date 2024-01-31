@@ -23,7 +23,7 @@ grep "GRUB_THEME=" /etc/default/grub >/dev/null 2>&1 && sudo sed -i '/GRUB_THEME
 grep "GRUB_BACKGROUND=" /etc/default/grub >/dev/null 2>&1 && sudo sed -i '/GRUB_BACKGROUND=/d' /etc/default/grub
 
 sudo pacman -S --needed --noconfirm wget
-wget -P /tmp https://github.com/anisbsalah/poly-dark/raw/master/install.sh
+wget -P /tmp https://github.com/anisbsalah/poly-dark/raw/main/install.sh
 bash /tmp/install.sh --lang English
 
 echo
