@@ -25,7 +25,7 @@ error_symbol = "[✗](bold red)"
 [directory]
 read_only = " 󰌾"
 truncation_length = 10
-truncate_to_repo = true			# truncates directory to root folder if in github repo
+truncate_to_repo = true    # truncates directory to root folder if in github repo
 style = "bold italic blue"
 
 [cmd_duration]
@@ -63,24 +63,24 @@ symbol = " "
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-stashed = "[${count}*](green)" 
-modified = "[${count}+](yellow)" 
-deleted =  "[${count}-](red)" 
-conflicted =  "[${count}~](red)" 
+stashed = "[${count}*](green)"
+modified = "[${count}+](yellow)"
+deleted = "[${count}-](red)"
+conflicted = "[${count}~](red)"
 ahead = "⇡${count}"
 behind = "⇣${count}"
-untracked = "[${count}?](blue)" 
-staged = "[${count}+](green)" 
+untracked = "[${count}?](blue)"
+staged = "[${count}+](green)"
 
 [git_state]
-style =	"bold red"
+style = "bold red"
 format = "[$state( $progress_current/$progress_total) ]($style)"
 rebase = "rebase"
-merge = "merge"	
-revert = "revert"	
+merge = "merge"
+revert = "revert"
 cherry_pick = "cherry"
-bisect = "bisect"	
-am = "am"	
+bisect = "bisect"
+am = "am"
 am_or_rebase = "am/rebase"
 
 [golang]
