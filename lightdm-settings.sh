@@ -37,7 +37,7 @@ elif pacman -Qi lightdm-slick-greeter &>/dev/null; then
 	sudo tee "/etc/lightdm/slick-greeter.conf" <<EOF
 [Greeter]
 background=/usr/share/backgrounds/AbS-Wallpapers/login_bg2.jpg
-draw-user-backgrounds=true
+draw-user-backgrounds=false
 theme-name=Arc-Dark
 icon-theme-name=Papirus-Dark
 cursor-theme-name=Qogir-Cursors
