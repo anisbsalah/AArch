@@ -33,7 +33,7 @@ cursor-theme-name = Qogir-Cursors
 cursor-theme-size = 24
 font-name = Noto Sans Bold 11
 background = /usr/share/backgrounds/AbS-Wallpapers/lightdm-gtk_bg.jpg
-default-user-image = /usr/share/backgrounds/AbS-Wallpapers/avatar.jpg
+default-user-image = /usr/share/backgrounds/AbS-Wallpapers/avatar.png
 EOF
 
 elif pacman -Qi lightdm-slick-greeter &>/dev/null; then

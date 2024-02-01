@@ -21,9 +21,11 @@ echo
 
 [[ -d /usr/share/backgrounds/AbS-Wallpapers ]] || sudo mkdir -p /usr/share/backgrounds/AbS-Wallpapers
 sudo cp -v "${CURRENT_DIR}/Personal/settings/backgrounds/desktop_bg.jpg" /usr/share/backgrounds/AbS-Wallpapers/
+sudo cp -v "${CURRENT_DIR}/Personal/settings/backgrounds/grub_bg.jpg" /usr/share/backgrounds/AbS-Wallpapers/
 sudo cp -v "${CURRENT_DIR}/Personal/settings/backgrounds/lightdm-gtk_bg.jpg" /usr/share/backgrounds/AbS-Wallpapers/
 sudo cp -v "${CURRENT_DIR}/Personal/settings/backgrounds/lightdm-slick_bg.jpg" /usr/share/backgrounds/AbS-Wallpapers/
-sudo cp -v "${CURRENT_DIR}/Personal/settings/.face" /usr/share/backgrounds/AbS-Wallpapers/avatar.jpg
+sudo cp -v "${CURRENT_DIR}/Personal/settings/backgrounds/sddm_bg.jpg" /usr/share/backgrounds/AbS-Wallpapers/
+sudo cp -v "${CURRENT_DIR}/Personal/settings/.face" /usr/share/backgrounds/AbS-Wallpapers/avatar.png
 cp -v "${CURRENT_DIR}/Personal/settings/.face" "${HOME}/.face"
 
 echo
