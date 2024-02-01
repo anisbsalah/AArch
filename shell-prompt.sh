@@ -20,7 +20,6 @@ tput sgr0
 echo
 
 sudo pacman -S --noconfirm --needed curl
-
 curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 
 ### Oh My Posh themes
@@ -37,9 +36,11 @@ echo "##########################################################################
 echo "################# Installing Starship..."
 echo "######################################################################################################"
 tput sgr0
-#echo
+echo
 
-curl -sS https://starship.rs/install.sh | sh
+# sudo pacman -S --noconfirm --needed curl
+# curl -sS https://starship.rs/install.sh | sh
+sudo pacman -S --noconfirm --needed starship
 
 ### Starship configuration
 cp -v "${CURRENT_DIR}/Personal/settings/starship/starship.toml" "${HOME}/.config/starship.toml"
