@@ -47,9 +47,11 @@ if [[ -d ${TOOLS_DIR} ]]; then
 	done
 else
 	echo "Directory '${TOOLS_DIR}' does not exist."
+	exit 1
 fi
 
 if [[ -f "${HOME}/.bashrc" ]]; then
+	cp -an "${HOME}/.bashrc" "${HOME}/.bashrc.bak"
 	echo '
 ### reporting tools - install when not installed
 # alsi
