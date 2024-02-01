@@ -22,9 +22,12 @@ echo
 # ### To display swappiness value
 # cat /proc/sys/vm/swappiness
 
-echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.d/99-swappiness.conf
-### or (works on manjaro)
-#echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.d/100-manjaro.conf
+if grep -q "vm.swappiness=" /etc/sysctl.d/99-swappiness.conf >/dev/null 2>&1; then
+	sudo sed -i 's/vm.swappiness=.*/vm.swappiness=10/g' /etc/sysctl.d/99-swappiness.conf
+else
+	echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.d/99-swappiness.conf
+	# echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.d/100-manjaro.conf # works on manjaro
+fi
 
 sudo systemctl restart systemd-sysctl.service
 
