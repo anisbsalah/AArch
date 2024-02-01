@@ -58,7 +58,7 @@ gsettings set x.dm.slick-greeter icon-theme-name 'Papirus-Dark'
 gsettings set x.dm.slick-greeter cursor-theme-name 'Qogir-Cursors'
 gsettings set x.dm.slick-greeter font-name 'Noto Sans Bold 11'
 
-# Keyboard & touchpad
+# Keyboard & Touchpad
 gsettings set org.cinnamon.desktop.interface keyboard-layout-show-flags false
 gsettings set org.cinnamon.desktop.peripherals.touchpad edge-scrolling-enabled true
 gsettings set org.cinnamon.desktop.peripherals.touchpad two-finger-scrolling-enabled false
