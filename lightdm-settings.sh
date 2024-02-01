@@ -21,7 +21,7 @@ echo
 
 if pacman -Qi lightdm-gtk-greeter &>/dev/null; then
 
-	sudo sed -i 's/[#[:space:]]*greeter-session=.*/greeter-session=lightdm-gtk-greeter/g'
+	sudo sed -i 's/[#[:space:]]*greeter-session=.*/greeter-session=lightdm-gtk-greeter/g' /etc/lightdm/lightdm.conf
 	sudo tee "/etc/lightdm/lightdm-gtk-greeter.conf" <<EOF
 [greeter]
 theme-name = Arc-Dark
@@ -33,7 +33,7 @@ EOF
 
 elif pacman -Qi lightdm-slick-greeter &>/dev/null; then
 
-	sudo sed -i 's/[#[:space:]]*greeter-session=.*/greeter-session=lightdm-slick-greeter/g'
+	sudo sed -i 's/[#[:space:]]*greeter-session=.*/greeter-session=lightdm-slick-greeter/g' /etc/lightdm/lightdm.conf
 	sudo tee "/etc/lightdm/slick-greeter.conf" <<EOF
 [Greeter]
 background=/usr/share/backgrounds/AbS-Wallpapers/login_bg2.jpg
