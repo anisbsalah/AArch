@@ -16,12 +16,22 @@
 echo
 tput setaf 3
 echo "######################################################################################################"
-echo "################# Creating a function to add directories to PATH..."
+echo "################# Creating 'set_path' function to add directories to PATH..."
 echo "######################################################################################################"
 tput sgr0
 echo
 
-if ! grep -q 'set_path(){' /etc/profile; then
+if grep -q 'set_path() {' /etc/profile; then
+
+	echo
+	tput setaf 2
+	echo "######################################################################################################"
+	echo "################# 'set_path' function already exists"
+	echo "######################################################################################################"
+	tput sgr0
+	echo
+
+else
 
 	# shellcheck disable=SC2016
 	echo '
