@@ -30,7 +30,7 @@ return {
 	window_decorations = "TITLE | RESIZE",
 	enable_tab_bar = true,
 	tab_bar_at_bottom = true,
-	use_fancy_tab_bar = false,
+	use_fancy_tab_bar = true,
 	hide_tab_bar_if_only_one_tab = true,
 	enable_scroll_bar = true,
 	scrollback_lines = 50000,
