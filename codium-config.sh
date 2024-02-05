@@ -25,9 +25,11 @@ tput sgr0
 
 cp -rf "${CURRENT_DIR}/Personal/settings/VSCodium" "${HOME}/.config/"
 
+echo
 tput setaf 3
 echo "(2/2) Installing extensions..."
 tput sgr0
+echo
 
 extensions=(
 	"EditorConfig.EditorConfig"

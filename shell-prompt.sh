@@ -28,6 +28,7 @@ curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 mkdir -p "${HOME}/.config/oh-my-posh/themes" && cp -v "${CURRENT_DIR}/Personal/settings/oh-my-posh/"* "${HOME}/.config/oh-my-posh/themes/"
 
 ### Set up your shell to use Oh My Posh
+# shellcheck disable=SC2016
 [[ ! -f "${HOME}/.bashrc" ]] || echo '
 ### Oh My Posh
 #eval "$(oh-my-posh init bash)"' | tee -a "${HOME}/.bashrc"
@@ -48,6 +49,7 @@ sudo pacman -S --noconfirm --needed starship
 cp -v "${CURRENT_DIR}/Personal/settings/starship/starship.toml" "${HOME}/.config/starship.toml"
 
 ### Set up your shell to use Starship
+# shellcheck disable=SC2016
 [[ ! -f "${HOME}/.bashrc" ]] || echo '
 ### Starship
 eval "$(starship init bash)"' | tee -a "${HOME}/.bashrc"
