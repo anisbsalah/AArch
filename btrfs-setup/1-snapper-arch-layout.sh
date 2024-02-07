@@ -22,7 +22,7 @@ if lsblk -f | grep btrfs >/dev/null 2>&1; then
 
 	tput setaf 3
 	echo "######################################################################################################"
-	echo "################# Installing Snapper..." # with the Arch wiki recommended layout
+	echo "################# Installing Snapper..." # with the suggested filesystem layout from arch wiki
 	echo "######################################################################################################"
 	tput sgr0
 	echo
@@ -116,7 +116,7 @@ if lsblk -f | grep btrfs >/dev/null 2>&1; then
 	if sudo btrfs subvolume list / | grep -q '@snapshots'; then
 
 		tput setaf 13
-		echo '➜ @snapshots subvolume already exists'
+		echo '==> @snapshots subvolume already exists'
 		tput sgr0
 		echo
 
@@ -124,23 +124,21 @@ if lsblk -f | grep btrfs >/dev/null 2>&1; then
 
 		### Create @snapshots subvolume
 		tput setaf 13
-		echo '➜ @snapshots subvolume being created...'
+		echo '==> @snapshots subvolume being created...'
 		tput sgr0
 		echo
 
 		ROOT_BTRFS_FS=$(df --output=source / | tail -n 1)
 		UUID_ROOT=$(lsblk -dno UUID "${ROOT_BTRFS_FS}")
 
+		sudo mount -t btrfs -o subvol=/ /dev/disk/by-uuid/"${UUID_ROOT}" /mnt
 		#sudo mount "${ROOT_BTRFS_FS}" /mnt
 		#sudo mount -o subvolid=5 "${ROOT_BTRFS_FS}" /mnt
-		sudo mount -t btrfs -o subvol=/ /dev/disk/by-uuid/"${UUID_ROOT}" /mnt
 
 		sudo btrfs subvolume create /mnt/@snapshots
-
 		sudo umount /mnt
 
 		#sudo mount -o defaults,noatime,compress=zstd,subvol=/@snapshots "${ROOT_BTRFS_FS}" /.snapshots
-		#echo -e "\nUUID=$(lsblk -no UUID "${ROOT_BTRFS_FS}") /.snapshots           btrfs	defaults,noatime,compress=zstd,subvol=/@snapshots 0       0" | sudo tee -a /etc/fstab
 		echo
 		echo "UUID=$(lsblk -no UUID "${ROOT_BTRFS_FS}") /.snapshots	btrfs	defaults,noatime,compress=zstd,subvol=/@snapshots 0       0" | sudo tee -a /etc/fstab
 
