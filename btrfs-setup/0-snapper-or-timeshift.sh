@@ -51,14 +51,24 @@ if lsblk -f | grep btrfs >/dev/null 2>&1; then
 			sudo rm -rf /.snapshots
 		fi
 
-		sudo sed -i '/subvol=@snapshots/d' /etc/fstab
+		# Snapper create-config automatically creates a subvolume `.snapshots` with the root subvolume @ as its parent.
+		# Therefore, `@snapshots` is no more needed.
+		ROOT_BTRFS_FS=$(df --output=source / | tail -n 1)
+		UUID_ROOT=$(lsblk -dno UUID "${ROOT_BTRFS_FS}")
+		sudo mount -t btrfs -o subvol=/ /dev/disk/by-uuid/"${UUID_ROOT}" /mnt
+		sudo btrfs subvolume delete /mnt/@snapshots
+		sudo umount /mnt
+		sudo sed -i '/@snapshots/s/^/# /' /etc/fstab # Uncomment the line that contains `@snapshots` in fstab
+		#sudo sed -i '/.*@snapshots.*/d' /etc/fstab # Delete the line that contains `@snapshots` in fstab
+		sudo systemctl daemon-reload
 
-		sudo pacman -S --needed --noconfirm grub-btrfs
-		sudo pacman -S --needed --noconfirm btrfs-assistant
+		sudo pacman -S --needed --noconfirm btrfs-assistant # An application for managing BTRFS subvolumes and Snapper snapshots
+		sudo pacman -S --needed --noconfirm grub-btrfs inotify-tools
 		sudo pacman -S --needed --noconfirm snapper
-		sudo pacman -S --needed --noconfirm snap-pac-git
-		sudo pacman -S --needed --noconfirm snapper-support
-		sudo pacman -S --needed --noconfirm snapper-tools-git
+		sudo pacman -S --needed --noconfirm snap-pac-git    # Pacman hooks that use snapper to create pre/post btrfs snapshots like openSUSE's YaST
+		sudo pacman -S --needed --noconfirm snap-pac-grub   # Pacman hook to update GRUB entries for grub-btrfs after snap-pac made snapshots
+		sudo pacman -S --needed --noconfirm snapper-support # Support package for enabling Snapper with snap-pac and grub-btrfs support
+		#sudo pacman -S --needed --noconfirm snapper-tools-git # A highly opinionated Snapper GUI and CLI
 
 		echo
 		tput setaf 3
