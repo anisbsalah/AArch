@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# See https://github.com/Gogh-Co/Gogh
+
 # ruamel.yaml==0.17.21
 # unidecode
 # pyyaml

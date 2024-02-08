@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# -----------------------------------------------------------------------------------------
+
 export PROFILE_NAME="Arc-Dark"
 
 export COLOR_01="#4b5164" # Black (Host)
@@ -23,7 +25,7 @@ export COLOR_16="#a9a9aa" # Bright White
 export BACKGROUND_COLOR="#383c4a" # Background
 export FOREGROUND_COLOR="#d3dae3" # Foreground (Text)
 
-export CURSOR_COLOR="$FOREGROUND_COLOR" # Cursor
+export CURSOR_COLOR="${FOREGROUND_COLOR}" # Cursor
 
 # | ===========================================================================
 # | Apply Colors
@@ -46,6 +48,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Catppuccin Frappé"
 
@@ -94,6 +98,8 @@ else
 	fi
 fi
 
+# -----------------------------------------------------------------------------------------
+
 export PROFILE_NAME="Catppuccin Macchiato"
 
 export COLOR_01="#494D64" # Black (Host)
@@ -140,6 +146,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Catppuccin Mocha"
 
@@ -188,6 +196,8 @@ else
 	fi
 fi
 
+# -----------------------------------------------------------------------------------------
+
 export PROFILE_NAME="Doom-One"
 
 export COLOR_01="#1c1f24" # Black (Host)
@@ -234,6 +244,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Dracula"
 
@@ -282,6 +294,8 @@ else
 	fi
 fi
 
+# -----------------------------------------------------------------------------------------
+
 export PROFILE_NAME="Everforest Dark"
 
 export COLOR_01="#4B565C" # Black (Host)
@@ -320,7 +334,7 @@ BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
 if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
 	bash "${PARENT_PATH}/apply-colors.sh"
 else
-	if [[ "$(uname)" = "Darwin" ]]; then
+	if [[ "$(uname)" == "Darwin" ]]; then
 		# OSX ships with curl and ancient bash
 		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
 	else
@@ -328,6 +342,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Gruvbox Dark"
 
@@ -376,6 +392,8 @@ else
 	fi
 fi
 
+# -----------------------------------------------------------------------------------------
+
 export PROFILE_NAME="Gruvbox Material"
 
 export COLOR_01="#3C3836" # Black (Host)
@@ -423,6 +441,8 @@ else
 	fi
 fi
 
+# -----------------------------------------------------------------------------------------
+
 export PROFILE_NAME="Kanagawa"
 
 export COLOR_01="#090618" # Black (Host)
@@ -461,7 +481,7 @@ BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
 if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
 	bash "${PARENT_PATH}/apply-colors.sh"
 else
-	if [[ "$(uname)" = "Darwin" ]]; then
+	if [[ "$(uname)" == "Darwin" ]]; then
 		# OSX ships with curl and ancient bash
 		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
 	else
@@ -469,6 +489,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Material"
 
@@ -508,7 +530,7 @@ BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
 if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
 	bash "${PARENT_PATH}/apply-colors.sh"
 else
-	if [[ "$(uname)" = "Darwin" ]]; then
+	if [[ "$(uname)" == "Darwin" ]]; then
 		# OSX ships with curl and ancient bash
 		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
 	else
@@ -516,6 +538,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Oceanic Next"
 
@@ -555,7 +579,7 @@ BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
 if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
 	bash "${PARENT_PATH}/apply-colors.sh"
 else
-	if [[ "$(uname)" = "Darwin" ]]; then
+	if [[ "$(uname)" == "Darwin" ]]; then
 		# OSX ships with curl and ancient bash
 		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
 	else
@@ -563,6 +587,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Ocean Dark"
 
@@ -611,6 +637,8 @@ else
 	fi
 fi
 
+# -----------------------------------------------------------------------------------------
+
 export PROFILE_NAME="One Dark"
 
 export COLOR_01="#000000" # Black (Host)
@@ -658,6 +686,57 @@ else
 	fi
 fi
 
+# -----------------------------------------------------------------------------------------
+
+export PROFILE_NAME="Palenight"
+
+export COLOR_01="#292D3E" # Black (Host)
+export COLOR_02="#F07178" # Red (Syntax string)
+export COLOR_03="#C3E88D" # Green (Command)
+export COLOR_04="#FFCB6B" # Yellow (Command second)
+export COLOR_05="#82AAFF" # Blue (Path)
+export COLOR_06="#C792EA" # Magenta (Syntax var)
+export COLOR_07="#60ADEC" # Cyan (Prompt)
+export COLOR_08="#ABB2BF" # White
+
+export COLOR_09="#959DCB" # Bright Black
+export COLOR_10="#F07178" # Bright Red (Command error)
+export COLOR_11="#C3E88D" # Bright Green (Exec)
+export COLOR_12="#FF5572" # Bright Yellow
+export COLOR_13="#82AAFF" # Bright Blue (Folder)
+export COLOR_14="#FFCB6B" # Bright Magenta
+export COLOR_15="#676E95" # Bright Cyan
+export COLOR_16="#FFFEFE" # Bright White
+
+export BACKGROUND_COLOR="#292D3E" # Background
+export FOREGROUND_COLOR="#BFC7D5" # Foreground (Text)
+
+export CURSOR_COLOR="#BFC7D5" # Cursor
+
+# | ===========================================================================
+# | Apply Colors
+# | ===========================================================================
+SCRIPT_PATH="${SCRIPT_PATH:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+PARENT_PATH="$(dirname "${SCRIPT_PATH}")"
+
+# Allow developer to change url to forked url for easier testing
+# IMPORTANT: Make sure you export this variable if your main shell is not bash
+BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
+
+if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
+	bash "${PARENT_PATH}/apply-colors.sh"
+else
+	if [[ "$(uname)" == "Darwin" ]]; then
+		# OSX ships with curl and ancient bash
+		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
+	else
+		# Linux ships with wget
+		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
+	fi
+fi
+
+# -----------------------------------------------------------------------------------------
+
 export PROFILE_NAME="Rosé Pine"
 
 export COLOR_01="#26233A" # Black (Host)
@@ -696,7 +775,7 @@ BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
 if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
 	bash "${PARENT_PATH}/apply-colors.sh"
 else
-	if [[ "$(uname)" = "Darwin" ]]; then
+	if [[ "$(uname)" == "Darwin" ]]; then
 		# OSX ships with curl and ancient bash
 		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
 	else
@@ -704,6 +783,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Rosé Pine Moon"
 
@@ -743,7 +824,7 @@ BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
 if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
 	bash "${PARENT_PATH}/apply-colors.sh"
 else
-	if [[ "$(uname)" = "Darwin" ]]; then
+	if [[ "$(uname)" == "Darwin" ]]; then
 		# OSX ships with curl and ancient bash
 		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
 	else
@@ -751,6 +832,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Sweet"
 
@@ -799,6 +882,8 @@ else
 	fi
 fi
 
+# -----------------------------------------------------------------------------------------
+
 export PROFILE_NAME="Tokyo Night"
 
 export COLOR_01="#414868" # Black (Host)
@@ -837,7 +922,7 @@ BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
 if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
 	bash "${PARENT_PATH}/apply-colors.sh"
 else
-	if [[ "$(uname)" = "Darwin" ]]; then
+	if [[ "$(uname)" == "Darwin" ]]; then
 		# OSX ships with curl and ancient bash
 		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
 	else
@@ -845,6 +930,8 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
 
 export PROFILE_NAME="Tokyo Night Storm"
 
@@ -884,7 +971,7 @@ BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
 if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
 	bash "${PARENT_PATH}/apply-colors.sh"
 else
-	if [[ "$(uname)" = "Darwin" ]]; then
+	if [[ "$(uname)" == "Darwin" ]]; then
 		# OSX ships with curl and ancient bash
 		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
 	else
@@ -892,3 +979,54 @@ else
 		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
 	fi
 fi
+
+# -----------------------------------------------------------------------------------------
+
+export PROFILE_NAME="Tomorrow Night"
+
+export COLOR_01="#000000" # Black (Host)
+export COLOR_02="#CC6666" # Red (Syntax string)
+export COLOR_03="#B5BD68" # Green (Command)
+export COLOR_04="#F0C674" # Yellow (Command second)
+export COLOR_05="#81A2BE" # Blue (Path)
+export COLOR_06="#B293BB" # Magenta (Syntax var)
+export COLOR_07="#8ABEB7" # Cyan (Prompt)
+export COLOR_08="#FFFEFE" # White
+
+export COLOR_09="#808080" # Bright Black
+export COLOR_10="#CC6666" # Bright Red (Command error)
+export COLOR_11="#B5BD68" # Bright Green (Exec)
+export COLOR_12="#F0C574" # Bright Yellow
+export COLOR_13="#80A1BD" # Bright Blue (Folder)
+export COLOR_14="#B294BA" # Bright Magenta
+export COLOR_15="#8ABDB6" # Bright Cyan
+export COLOR_16="#FFFEFE" # Bright White
+
+export BACKGROUND_COLOR="#1D1F21" # Background
+export FOREGROUND_COLOR="#C5C8C6" # Foreground (Text)
+
+export CURSOR_COLOR="#C4C8C5" # Cursor
+
+# | ===========================================================================
+# | Apply Colors
+# | ===========================================================================
+SCRIPT_PATH="${SCRIPT_PATH:-$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)}"
+PARENT_PATH="$(dirname "${SCRIPT_PATH}")"
+
+# Allow developer to change url to forked url for easier testing
+# IMPORTANT: Make sure you export this variable if your main shell is not bash
+BASE_URL=${BASE_URL:-"https://raw.githubusercontent.com/Gogh-Co/Gogh/master"}
+
+if [[ -e "${PARENT_PATH}/apply-colors.sh" ]]; then
+	bash "${PARENT_PATH}/apply-colors.sh"
+else
+	if [[ "$(uname)" == "Darwin" ]]; then
+		# OSX ships with curl and ancient bash
+		bash -c "$(curl -so- "${BASE_URL}/apply-colors.sh")"
+	else
+		# Linux ships with wget
+		bash -c "$(wget -qO- "${BASE_URL}/apply-colors.sh")"
+	fi
+fi
+
+# -----------------------------------------------------------------------------------------
