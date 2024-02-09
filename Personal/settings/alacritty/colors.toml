@@ -1,33 +1,47 @@
+# Colors (Arc-Dark)
+
+# Default colors
 [colors.primary]
-background = "0x383c4a"
-foreground = "0xd3dae3"
+background = '#383c4a'
+foreground = '#d3dae3'
 
+dim_foreground    = '#d3dae3'
+bright_foreground = '#d3dae3'
+
+# Cursor colors
+[colors.cursor]
+text   = '#383c4a'
+cursor = '#d3dae3'
+
+# Normal colors
 [colors.normal]
-black = "0x4b5164"
-blue = "0x4877b1"
-cyan = "0x5294e2"
-green = "0x5ca75b"
-magenta = "0xa660c3"
-red = "0xe14245"
-white = "0xa9a9aa"
-yellow = "0xf6ab32"
+black   = '#4b5164'
+red     = '#e14245'
+green   = '#5ca75b'
+yellow  = '#f6ab32'
+blue    = '#4877b1'
+magenta = '#a660c3'
+cyan    = '#5294e2'
+white   = '#a9a9aa'
 
+# Bright colors
 [colors.bright]
-black = "0x616981"
-blue = "0x8ca9bf"
-cyan = "0x73c5e2"
-green = "0xadd488"
-magenta = "0xe2afec"
-red = "0xe16f7e"
-white = "0xfcfcfc"
-yellow = "0xfdc35f"
+black   = '#616981'
+red     = '#e16f7e'
+green   = '#add488'
+yellow  = '#fdc35f'
+blue    = '#8ca9bf'
+magenta = '#e2afec'
+cyan    = '#73c5e2'
+white   = '#fcfcfc'
 
+# Dim colors
 [colors.dim]
-black = "0x2c2f3a"
-blue = "0x2b486b"
-cyan = "0x1b668f"
-green = "0x4b7c16"
-magenta = "0x614a73"
-red = "0x783228"
-white = "0x63686d"
-yellow = "0xb65619"
+black   = '#2c2f3a'
+red     = '#783228'
+green   = '#4b7c16'
+yellow  = '#b65619'
+blue    = '#2b486b'
+magenta = '#614a73'
+cyan    = '#1b668f'
+white   = '#63686d'
