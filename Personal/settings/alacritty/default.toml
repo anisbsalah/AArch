@@ -1,3 +1,5 @@
+# Alacritty - TOML configuration file.
+
 [font]
 size = 12.0
 
