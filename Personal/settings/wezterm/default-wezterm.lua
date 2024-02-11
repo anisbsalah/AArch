@@ -42,7 +42,7 @@ return {
 
   -- Fonts
   font = wezterm.font 'JetBrainsMono Nerd Font',
-  font_size = 13.0,
+  font_size = 12.0,
   
   -- Colors
   color_scheme = 'Arc-Dark',
