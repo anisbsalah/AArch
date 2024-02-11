@@ -153,6 +153,17 @@ sudo pacman -S --noconfirm --needed nss-mdns
 echo
 tput setaf 3
 echo "######################################################################################################"
+echo "################# Getting latest /etc/nsswitch.conf from ArcoLinux"
+echo "######################################################################################################"
+echo
+tput sgr0
+
+sudo cp -anv /etc/nsswitch.conf /etc/nsswitch.conf.bak
+sudo wget https://raw.githubusercontent.com/arcolinux/arcolinuxl-iso/master/archiso/airootfs/etc/nsswitch.conf -O /etc/nsswitch.conf || sudo cp -v "${CURRENT_DIR}/samba/nsswitch/abs/nsswitch.conf" /etc/nsswitch.conf
+
+echo
+tput setaf 3
+echo "######################################################################################################"
 echo "################# Configuring the firewall service"
 echo "######################################################################################################"
 echo
