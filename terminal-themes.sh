@@ -39,6 +39,20 @@ if pacman -Qi "gnome-terminal" &>/dev/null; then
 	bash "${CURRENT_DIR}/Personal/settings/terminal-themes/gnome-terminal/gnome-terminal-themes.sh"
 fi
 
+if pacman -Qi "kitty" &>/dev/null; then
+
+	echo
+	tput setaf 3
+	echo "######################################################################################################"
+	echo "################# Installing themes for kitty terminal..."
+	echo "######################################################################################################"
+	tput sgr0
+	echo
+
+	[[ -d "${HOME}/.config/kitty/themes" ]] || mkdir -p "${HOME}/.config/kitty/themes"
+	cp -v "${CURRENT_DIR}/Personal/settings/terminal-themes/kitty/"* "${HOME}/.config/kitty/themes/"
+fi
+
 if pacman -Qi "xfce4-terminal" &>/dev/null; then
 
 	echo
@@ -50,7 +64,7 @@ if pacman -Qi "xfce4-terminal" &>/dev/null; then
 	echo
 
 	[[ -d "${HOME}/.local/share/xfce4/terminal/colorschemes" ]] || mkdir -p "${HOME}/.local/share/xfce4/terminal/colorschemes"
-	cp -v "${CURRENT_DIR}/Personal/settings/terminal-themes/xfce-terminal/"* "${HOME}/.local/share/xfce4/terminal/colorschemes"
+	cp -v "${CURRENT_DIR}/Personal/settings/terminal-themes/xfce-terminal/"* "${HOME}/.local/share/xfce4/terminal/colorschemes/"
 fi
 
 echo
