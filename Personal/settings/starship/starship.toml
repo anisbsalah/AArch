@@ -14,7 +14,7 @@ disabled = true
 [hostname]
 ssh_only = false
 ssh_symbol = " "
-format = '[  ](bold red) '
+format = '[  ](bold cyan) '
 trim_at = "."
 disabled = false
 
