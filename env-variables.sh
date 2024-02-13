@@ -51,6 +51,7 @@ function search_and_replace() {
 search_and_replace "GTK_THEME=" "GTK_THEME=Arc-Dark"
 search_and_replace "QT_STYLE_OVERRIDE=" "QT_STYLE_OVERRIDE=kvantum"
 search_and_replace "EDITOR=" "EDITOR=nano"
+search_and_replace "VISUAL=" "VISUAL=nano"
 
 echo
 tput setaf 2
