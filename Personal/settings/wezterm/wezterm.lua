@@ -17,6 +17,17 @@ wezterm.on("gui-startup", function(cmd)
 	window:gui_window():maximize()
 end)
 
+-- -- Set startup window position
+-- local mux = wezterm.mux
+-- wezterm.on("gui-startup", function(cmd)
+-- 	wezterm.mux.spawn_window({
+-- 		position = {
+-- 			x = 280,
+-- 			y = 120,
+-- 		},
+-- 	})
+-- end)
+
 -- This is where you actually apply your config choices
 return {
 
@@ -28,6 +39,8 @@ return {
 	-- Appearance
 	window_background_opacity = 0.85,
 	window_decorations = "TITLE | RESIZE",
+	initial_cols = 80,
+	initial_rows = 24,
 	enable_tab_bar = true,
 	tab_bar_at_bottom = true,
 	use_fancy_tab_bar = true,
