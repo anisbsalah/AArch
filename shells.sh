@@ -48,7 +48,7 @@ fi
 printf '\n[*] Copying dotfiles...\n\n'
 [[ ! -d ${HOME}/.config/zsh ]] && mkdir -p "${HOME}/.config/zsh"
 if pacman -Qi oh-my-zsh &>/dev/null || pacman -Qi oh-my-zsh-git &>/dev/null; then
-	cp -av "${CURRENT_DIR}/Personal/settings/oh-my-zsh/"* "${HOME}/.config/zsh/"
+	cp -v "${CURRENT_DIR}/Personal/settings/oh-my-zsh/.zshrc" "${HOME}/.config/zsh/"
 	sudo sed -i 's|HISTFILE=.*|HISTFILE="$HOME/.config/zsh/.zsh_history"|' /usr/share/oh-my-zsh/lib/history.zsh
 else
 	cp -rfv "${CURRENT_DIR}/Personal/settings/zsh" "${HOME}/.config/"
