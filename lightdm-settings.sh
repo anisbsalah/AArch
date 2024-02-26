@@ -32,6 +32,7 @@ icon-theme-name = Papirus-Dark
 cursor-theme-name = Qogir-Cursors
 cursor-theme-size = 24
 font-name = Noto Sans Bold 11
+user-background = false
 background = /usr/share/backgrounds/AbS-Wallpapers/lightdm-gtk_bg.jpg
 default-user-image = /usr/share/backgrounds/AbS-Wallpapers/avatar.png
 EOF
