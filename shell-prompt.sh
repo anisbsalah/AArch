@@ -29,7 +29,7 @@ mkdir -p "${HOME}/.config/oh-my-posh/themes" && cp -v "${CURRENT_DIR}/Personal/s
 
 ### Set up your shell to use Oh My Posh
 # shellcheck disable=SC2016
-if ! grep -q 'eval "$(oh-my-posh init bash)"' "${HOME}/.bashrc"; then
+if ! grep -q 'eval "$(oh-my-posh init bash)"' "${HOME}/.bashrc" &>/dev/null; then
 	echo '
 ### Oh My Posh
 #eval "$(oh-my-posh init bash)"' | tee -a "${HOME}/.bashrc"
@@ -52,7 +52,7 @@ cp -v "${CURRENT_DIR}/Personal/settings/starship/starship.toml" "${HOME}/.config
 
 ### Set up your shell to use Starship
 # shellcheck disable=SC2016
-if ! grep -q 'eval "$(starship init bash)"' "${HOME}/.bashrc"; then
+if ! grep -q 'eval "$(starship init bash)"' "${HOME}/.bashrc" &>/dev/null; then
 	echo '
 ### Starship
 eval "$(starship init bash)"' | tee -a "${HOME}/.bashrc"

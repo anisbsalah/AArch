@@ -51,7 +51,7 @@ else
 fi
 
 [[ -f "${HOME}/.bashrc" ]] && cp -an "${HOME}/.bashrc" "${HOME}/.bashrc.bak"
-if ! grep -q '### reporting tools - install when not installed' "${HOME}/.bashrc"; then
+if ! grep -q '### reporting tools - install when not installed' "${HOME}/.bashrc" &>/dev/null; then
 	echo '
 ### reporting tools - install when not installed
 # alsi
