@@ -15,12 +15,18 @@ if [ -f ~/.bash_aliases ]; then
 fi
 
 ### reporting tools - install when not installed
+# alsi
 # fetch
 # hfetch
 # neofetch
+# paleofetch
 # pfetch
 # screenfetch
 # sfetch
+# ufetch
+# sysinfo
+# sysinfo-retro
+# colorscript random
 
 ### Oh My Posh
 #eval "$(oh-my-posh init bash)"

@@ -126,12 +126,18 @@ function ranger-cd {
 bindkey -s "^\er" "ranger-cd\n"
 
 ### reporting tools - install when not installed
+# alsi
 # fetch
 # hfetch
 # neofetch
+# paleofetch
 # pfetch
 # screenfetch
 # sfetch
+# ufetch
+# sysinfo
+# sysinfo-retro
+# colorscript random
 
 ### Oh My Posh
 #eval "$(oh-my-posh init zsh)"

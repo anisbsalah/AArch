@@ -62,7 +62,7 @@ if ! grep -q '### reporting tools - install when not installed' "${HOME}/.bashrc
 # pfetch
 # screenfetch
 # sfetch
-ufetch
+# ufetch
 # sysinfo
 # sysinfo-retro
 # colorscript random' | tee -a "${HOME}/.bashrc"
