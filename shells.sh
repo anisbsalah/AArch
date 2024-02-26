@@ -20,7 +20,7 @@ tput sgr0
 echo
 
 [[ -f "${HOME}/.bashrc" ]] && cp -an "${HOME}/.bashrc" "${HOME}/.bashrc.bak"
-cp -v "${CURRENT_DIR}/Personal/settings/bash/"* "${HOME}/"
+cp -v "${CURRENT_DIR}/Personal/settings/bash/.bashrc" "${HOME}/"
 
 echo
 tput setaf 3
@@ -37,7 +37,7 @@ if [[ ! ${SHELL} =~ zsh ]]; then
 	sudo chsh -s "$(command -v zsh)" "${USER}"
 fi
 
-if ! grep -q 'ZDOTDIR=' /etc/zsh/zshenv; then
+if ! grep -q 'ZDOTDIR=' /etc/zsh/zshenv &>/dev/null; then
 	# shellcheck disable=SC2016
 	printf '\n[*] Setting $ZDOTDIR...\n\n'
 	# shellcheck disable=SC2016
@@ -47,11 +47,11 @@ fi
 
 printf '\n[*] Copying dotfiles...\n\n'
 [[ ! -d ${HOME}/.config/zsh ]] && mkdir -p "${HOME}/.config/zsh"
-if pacman -Qi oh-my-zsh &>/dev/null; then
-	cp -v "${CURRENT_DIR}/Personal/settings/oh-my-zsh/"* "${HOME}/.config/zsh/"
+if pacman -Qi oh-my-zsh &>/dev/null || pacman -Qi oh-my-zsh-git &>/dev/null; then
+	cp -av "${CURRENT_DIR}/Personal/settings/oh-my-zsh/"* "${HOME}/.config/zsh/"
 	sudo sed -i 's|HISTFILE=.*|HISTFILE="$HOME/.config/zsh/.zsh_history"|' /usr/share/oh-my-zsh/lib/history.zsh
 else
-	cp -v "${CURRENT_DIR}/Personal/settings/zsh/"* "${HOME}/.config/zsh/"
+	cp -rfv "${CURRENT_DIR}/Personal/settings/zsh" "${HOME}/.config/"
 
 fi
 
