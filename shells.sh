@@ -39,7 +39,7 @@ fi
 
 if ! grep -q 'ZDOTDIR=' /etc/zsh/zshenv &>/dev/null; then
 	# shellcheck disable=SC2016
-	printf '\n[*] Setting $ZDOTDIR...\n\n'
+	printf '\n[*] Setting $ZDOTDIR...\n'
 	# shellcheck disable=SC2016
 	echo '
 export ZDOTDIR=${HOME}/.config/zsh' | sudo tee -a /etc/zsh/zshenv
