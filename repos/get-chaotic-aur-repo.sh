@@ -59,7 +59,6 @@ else
 	tput setaf 3
 	echo "[*] Activating the Chaotic-AUR repo..."
 	tput sgr0
-	echo
 	echo '
 
 [chaotic-aur]
