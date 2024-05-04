@@ -37,6 +37,8 @@ echo "########################################"
 
 grep '^HOOKS=' /etc/mkinitcpio.conf | if grep -q "microcode"; then echo "    microcode already in." && echo "${SEP}"; else sed -i '/^HOOKS=/s/autodetect\( \|$\)/autodetect microcode\1/g' /etc/mkinitcpio.conf; fi
 
+sudo mkinitcpio -P
+
 echo
 tput setaf 2
 echo "######################################################################################################"
