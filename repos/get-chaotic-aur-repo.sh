@@ -33,7 +33,6 @@ else
 	tput sgr0
 	echo
 
-	echo
 	tput setaf 3
 	echo "[*] Getting the primary key for Chaotic-AUR..."
 	tput sgr0
