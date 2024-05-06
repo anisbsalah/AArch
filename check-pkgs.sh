@@ -92,10 +92,10 @@ gnome_desktop=(gnome gnome-extra gnome-bluetooth)
 
 kde_desktop=(plasma-meta dolphin dolphin-plugins kate konsole sddm
 	ark audiocd-kio bluedevil extra-cmake-modules ffmpegthumbs
-	ghostwriter gwenview kate kcodecs5 kcoreaddons5 kcron kdeconnect
-	kdegraphics-thumbnailers kdenetwork-filesharing kdialog kimageformats5
+	ghostwriter gwenview kate kcodecs kcoreaddons kcron kdeconnect
+	kdegraphics-thumbnailers kdenetwork-filesharing kdialog kimageformats
 	kinit kio-fuse kompare ksysguard networkmanager-qt5 okular packagekit-qt5
-	partitionmanager plasma-wayland-session print-manager solid5 spectacle
+	partitionmanager plasma-wayland-session print-manager solid spectacle
 	svgpart xsettingsd xwaylandvideobridge yakuake)
 
 mate_desktop=(mate mate-extra lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings)
