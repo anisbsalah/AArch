@@ -29,9 +29,6 @@ function check_pkgs() {
 	missing_pkgs=()
 	printf "=== MISSING PKGS (IF ANY) ===\n\n" &>>"${MISSING_PKGS}"
 
-	# Initialize the package database
-	pacman -Sy &>>"${MISSING_PKGS}"
-
 	for pkg_arr in "${all_pkgs[@]}"; do
 		declare -n arr_name=${pkg_arr} # make a namespace for each pkg_array
 		for pkg_name in "${arr_name[@]}"; do
@@ -94,7 +91,7 @@ kde_desktop=(plasma-meta dolphin dolphin-plugins kate konsole sddm
 	ark audiocd-kio bluedevil extra-cmake-modules ffmpegthumbs
 	ghostwriter gwenview kate kcodecs kcoreaddons kcron kdeconnect
 	kdegraphics-thumbnailers kdenetwork-filesharing kdialog kimageformats
-	kinit kio-fuse kompare libksysguard networkmanager-qt5 okular packagekit-qt5
+	kinit kio-fuse kompare libksysguard networkmanager-qt5 okular packagekit-qt6
 	partitionmanager plasma-wayland-protocols print-manager solid spectacle
 	svgpart xsettingsd xwaylandvideobridge yakuake)
 
@@ -168,5 +165,9 @@ all_pkgs=(
 )
 
 ######################################################################################################
+# Initialize the package database
+sudo pacman -Sy &>/dev/null
+
+# Search for missing packages
 check_pkgs
 ######################################################################################################
