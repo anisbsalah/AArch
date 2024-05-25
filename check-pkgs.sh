@@ -94,8 +94,8 @@ kde_desktop=(plasma-meta dolphin dolphin-plugins kate konsole sddm
 	ark audiocd-kio bluedevil extra-cmake-modules ffmpegthumbs
 	ghostwriter gwenview kate kcodecs kcoreaddons kcron kdeconnect
 	kdegraphics-thumbnailers kdenetwork-filesharing kdialog kimageformats
-	kinit kio-fuse kompare ksysguard networkmanager-qt5 okular packagekit-qt5
-	partitionmanager plasma-wayland-session print-manager solid spectacle
+	kinit kio-fuse kompare libksysguard networkmanager-qt5 okular packagekit-qt5
+	partitionmanager plasma-wayland-protocols print-manager solid spectacle
 	svgpart xsettingsd xwaylandvideobridge yakuake)
 
 mate_desktop=(mate mate-extra lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings)
