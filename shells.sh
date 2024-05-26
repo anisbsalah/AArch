@@ -34,7 +34,9 @@ sudo pacman -S --noconfirm --needed zsh zsh-autosuggestions zsh-syntax-highlight
 
 if [[ ! ${SHELL} =~ zsh ]]; then
 	printf '\n[*] Making Zsh your default shell...\n\n'
-	sudo chsh -s "$(command -v zsh)" "${USER}"
+	# sudo chsh -s "$(command -v zsh)" "${USER}"
+	# sudo chsh -s "$(which zsh)" "${USER}"
+	sudo chsh -s /bin/zsh "${USER}"
 fi
 
 if ! grep -q 'ZDOTDIR=' /etc/zsh/zshenv &>/dev/null; then
