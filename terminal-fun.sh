@@ -26,10 +26,20 @@ echo
 # sudo install pfetch /usr/local/bin/
 # ls -l /usr/local/bin/pfetch
 
+sudo pacman -S --noconfirm --needed lsb-release wmctrl
+echo
+tput setaf 5
+echo " [*] Installing alsi..."
+tput sgr0
+sudo pacman -S --noconfirm --needed alsi
 tput setaf 5
 echo " [*] Installing neofetch..."
 tput sgr0
 sudo pacman -S --noconfirm --needed neofetch
+tput setaf 5
+echo " [*] Installing shell-color-scripts..."
+tput sgr0
+sudo pacman -S --noconfirm --needed shell-color-scripts
 
 TOOLS_DIR="${CURRENT_DIR}/Personal/bin/terminal-fun"
 
