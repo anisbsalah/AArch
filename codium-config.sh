@@ -19,16 +19,10 @@ echo "##########################################################################
 tput sgr0
 echo
 
-tput setaf 3
-echo "(1/2) Installing personal settings..."
-tput sgr0
+echo "Installing personal settings..."
 
 cp -rf "${CURRENT_DIR}/Personal/settings/VSCodium" "${HOME}/.config/"
 
-echo
-tput setaf 3
-echo "(2/2) Installing extensions..."
-tput sgr0
 echo
 
 extensions=(
