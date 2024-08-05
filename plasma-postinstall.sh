@@ -8,7 +8,7 @@
 # DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
 #
 ##################################################################################################################
-# CURRENT_DIR="$(pwd)"
+CURRENT_DIR="$(pwd)"
 ##################################################################################################################
 
 echo
@@ -18,6 +18,16 @@ echo "################# Plasma post installation..."
 echo "######################################################################################################"
 tput sgr0
 echo
+
+DESKTOP_BG="/usr/share/backgrounds/AbS-Wallpapers/desktop_bg.jpg"
+LOOKANDFEEL="org.kde.breezedark.desktop"
+COLORSCHEME="ArcDark"
+KVANTUM_THEME="ArcDark"
+DESKTOPTHEME="Arc-Dark"
+GTK_THEME="Arc-Dark"
+ICON_THEME="Papirus-Dark"
+CURSOR_THEME="Breeze_Light"
+SOUND_THEME="ocean"
 
 echo "[*] Setting system fonts..."
 kwriteconfig6 --file kdeglobals --group "General" --key "font" "Noto Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
