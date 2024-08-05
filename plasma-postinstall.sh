@@ -88,7 +88,7 @@ plasma-apply-wallpaperimage "${DESKTOP_BG}"
 
 echo "[*] Setting colors and themes..."
 # plasma-apply-lookandfeel -a "${LOOKANDFEEL}" # lookandfeeltool -a "${LOOKANDFEEL}"
-# sudo plasma-apply-lookandfeel -a "${LOOKANDFEEL}" # lookandfeeltool -a "${LOOKANDFEEL}"
+# sudo plasma-apply-lookandfeel -a "${LOOKANDFEEL}" # sudo lookandfeeltool -a "${LOOKANDFEEL}"
 
 plasma-apply-colorscheme "${COLORSCHEME}"
 sudo plasma-apply-colorscheme "${COLORSCHEME}"
