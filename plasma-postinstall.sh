@@ -29,6 +29,24 @@ ICON_THEME="Papirus-Dark"
 CURSOR_THEME="Breeze_Light"
 SOUND_THEME="ocean"
 
+# -------------------------------------------------
+
+SDDM_CONF="/etc/sddm.conf.d/kde_settings.conf"
+SDDM_THEME="breeze"
+SDDM_CURSOR_THEME="Breeze_Light"
+SDDM_FONT="Noto Sans,10,-1,0,400,0,0,0,0,0,0,0,0,0,0,1"
+SDDM_THEME_CONF="/usr/share/sddm/themes/breeze/theme.conf.user"
+SDDM_BG="/usr/share/backgrounds/AbS-Wallpapers/sddm_bg.jpg"
+
+echo "[*] Sddm settings..."
+sudo kwriteconfig6 --file "${SDDM_CONF}" --group "Theme" --key "Current" "${SDDM_THEME}"
+sudo kwriteconfig6 --file "${SDDM_CONF}" --group "Theme" --key "CursorTheme" "${SDDM_CURSOR_THEME}"
+sudo kwriteconfig6 --file "${SDDM_CONF}" --group "Theme" --key "Font" "${SDDM_FONT}"
+sudo kwriteconfig6 --file "${SDDM_THEME_CONF}" --group "General" --key "background" "${SDDM_BG}"
+sudo kwriteconfig6 --file "${SDDM_THEME_CONF}" --group "General" --key "type" image
+
+# -------------------------------------------------
+
 echo "[*] Setting system fonts..."
 kwriteconfig6 --file kdeglobals --group "General" --key "font" "Noto Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 kwriteconfig6 --file kdeglobals --group "General" --key "fixed" "Hack,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
@@ -48,7 +66,7 @@ plasma-apply-wallpaperimage "${DESKTOP_BG}"
 # -------------------------------------------------
 
 echo "[*] Setting colors and themes..."
-plasma-apply-lookandfeel -a "${LOOKANDFEEL}" # lookandfeeltool -a "${LOOKANDFEEL}"
+# plasma-apply-lookandfeel -a "${LOOKANDFEEL}" # lookandfeeltool -a "${LOOKANDFEEL}"
 plasma-apply-colorscheme "${COLORSCHEME}"
 kwriteconfig6 --file kdeglobals --group "KDE" --key "widgetStyle" "kvantum"
 kvantummanager --set "${KVANTUM_THEME}"
@@ -156,9 +174,9 @@ kwriteconfig6 --file konsolerc --group "MainWindow" --key "ToolBarsMovable" Disa
 # --------------------------------------------------
 
 echo "[*] Installing Plasma dotfiles..."
-cp -rfv "${CURRENT_DIR}"/Personal/settings/plasma/.config ~/
-cp -rfv "${CURRENT_DIR}"/Personal/settings/plasma/.local ~/
-sudo cp -rfv "${CURRENT_DIR}"/Personal/settings/plasma/usr /
+cp -rf "${CURRENT_DIR}"/Personal/settings/plasma/.config ~/
+cp -rf "${CURRENT_DIR}"/Personal/settings/plasma/.local ~/
+sudo cp -rf "${CURRENT_DIR}"/Personal/settings/plasma/usr /
 
 # --------------------------------------------------
 
