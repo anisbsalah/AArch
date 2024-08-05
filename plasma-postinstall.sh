@@ -164,11 +164,27 @@ kwriteconfig6 --file kscreenlockerrc --group "Greeter" --group "Wallpaper" --gro
 # -------------------------------------------------
 
 echo "[*] Setting services to be shown in the context menu..."
-kwriteconfig6 --file kservicemenurc --group "Show" --key "kompare" "false"
-kwriteconfig6 --file kservicemenurc --group "Show" --key "OpenAsRootKDE5" "true"
-kwriteconfig6 --file kservicemenurc --group "Show" --key "runInKonsole" "true"
-kwriteconfig6 --file kservicemenurc --group "Show" --key "selected" "true"
-kwriteconfig6 --file kservicemenurc --group "Show" --key "selectedsudo" "true"
+kwriteconfig6 --file kservicemenurc --group "Show" --key OpenAsRootKDE5 true
+kwriteconfig6 --file kservicemenurc --group "Show" --key compressfileitemaction true
+kwriteconfig6 --file kservicemenurc --group "Show" --key diff false
+kwriteconfig6 --file kservicemenurc --group "Show" --key diffsudo false
+kwriteconfig6 --file kservicemenurc --group "Show" --key extractfileitemaction true
+kwriteconfig6 --file kservicemenurc --group "Show" --key forgetfileitemaction true
+kwriteconfig6 --file kservicemenurc --group "Show" --key installFont true
+kwriteconfig6 --file kservicemenurc --group "Show" --key kactivitymanagerd_fileitem_linking_plugin true
+kwriteconfig6 --file kservicemenurc --group "Show" --key kdeconnectfileitemaction true
+kwriteconfig6 --file kservicemenurc --group "Show" --key kompare false
+kwriteconfig6 --file kservicemenurc --group "Show" --key makefileactions true
+kwriteconfig6 --file kservicemenurc --group "Show" --key mountisoaction true
+kwriteconfig6 --file kservicemenurc --group "Show" --key plasmavaultfileitemaction true
+kwriteconfig6 --file kservicemenurc --group "Show" --key runInKonsole false
+kwriteconfig6 --file kservicemenurc --group "Show" --key selected true
+kwriteconfig6 --file kservicemenurc --group "Show" --key selectedsudo true
+kwriteconfig6 --file kservicemenurc --group "Show" --key setArg1 false
+kwriteconfig6 --file kservicemenurc --group "Show" --key sharefileitemaction true
+kwriteconfig6 --file kservicemenurc --group "Show" --key slideshowfileitemaction true
+kwriteconfig6 --file kservicemenurc --group "Show" --key tagsfileitemaction true
+kwriteconfig6 --file kservicemenurc --group "Show" --key wallpaperfileitemaction true
 
 # -------------------------------------------------
 
@@ -215,6 +231,7 @@ kwriteconfig6 --file yakuakerc --group "Window" --key "KeepAbove" false
 
 kwriteconfig6 --file konsolerc --group "Desktop Entry" --key "DefaultProfile" "AbS.profile"
 kwriteconfig6 --file konsolerc --group "General" --key "ConfigVersion" 1
+kwriteconfig6 --file konsolerc --group "MainWindow" --key "MenuBar" Disabled
 kwriteconfig6 --file konsolerc --group "MainWindow" --key "ToolBarsMovable" Disabled
 
 # --------------------------------------------------
