@@ -39,7 +39,7 @@ SDDM_THEME_CONF="/usr/share/sddm/themes/${SDDM_THEME}/theme.conf.user"
 SDDM_BG="/usr/share/backgrounds/AbS-Wallpapers/sddm_bg.jpg"
 
 echo "[*] Sddm settings..."
-
+mkdir -p /etc/sddm.conf.d
 sudo tee "${SDDM_CONF}" <<EOF
 [Autologin]
 Relogin=false
@@ -85,11 +85,6 @@ kwriteconfig6 --file kdeglobals --group "WM" --key "activeFont" "Noto Sans,10,-1
 kwriteconfig6 --file kdeglobals --group "General" --key "XftAntialias" "true"
 kwriteconfig6 --file kdeglobals --group "General" --key "XftHintStyle" "hintslight"
 kwriteconfig6 --file kdeglobals --group "General" --key "XftSubPixel" "rgb"
-
-# -------------------------------------------------
-
-echo "[*] Setting wallpaper image..."
-plasma-apply-wallpaperimage "${DESKTOP_BG}"
 
 # -------------------------------------------------
 
@@ -170,6 +165,11 @@ EOF
 }
 
 set_dark_gtk
+
+# -------------------------------------------------
+
+echo "[*] Setting wallpaper image..."
+plasma-apply-wallpaperimage "${DESKTOP_BG}"
 
 # -------------------------------------------------
 
