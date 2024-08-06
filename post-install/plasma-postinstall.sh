@@ -69,9 +69,9 @@ EOF
 # --------------------------------------------------
 
 echo "[*] Installing Plasma dotfiles..."
-cp -rf "${CURRENT_DIR}"/Personal/settings/plasma/.config ~/
-cp -rf "${CURRENT_DIR}"/Personal/settings/plasma/.local ~/
-sudo cp -rf "${CURRENT_DIR}"/Personal/settings/plasma/usr /
+cp -rf "${CURRENT_DIR}"/../Personal/settings/plasma/.config ~/
+cp -rf "${CURRENT_DIR}"/../Personal/settings/plasma/.local ~/
+sudo cp -rf "${CURRENT_DIR}"/../Personal/settings/plasma/usr /
 
 # -------------------------------------------------
 
