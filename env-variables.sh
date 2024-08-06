@@ -19,39 +19,25 @@ echo "##########################################################################
 tput sgr0
 echo
 
-#if grep -q "GTK_THEME=" /etc/environment; then
-#	# Replace the existing value of GTK_THEME with "Arc-Dark"
-#	sudo sed -i 's/GTK_THEME=.*/GTK_THEME=Arc-Dark/' /etc/environment
-#else
-#	# Write a new line with GTK_THEME=Arc-Dark
-#	echo "GTK_THEME=Arc-Dark" | sudo tee -a /etc/environment
-#fi
-
-#if grep -q "QT_STYLE_OVERRIDE=" /etc/environment; then
-#	# Replace the existing value of QT_STYLE_OVERRIDE with "kvantum"
-#	sudo sed -i 's/QT_STYLE_OVERRIDE=.*/QT_STYLE_OVERRIDE=kvantum/' /etc/environment
-#else
-#	# Write a new line with QT_STYLE_OVERRIDE=kvantum
-#	echo "QT_STYLE_OVERRIDE=kvantum" | sudo tee -a /etc/environment
-#fi
-
 function search_and_replace() {
 	local FIND=$1
 	local REPLACE=$2
+	local FILE=$3
 
-	if grep -q "${FIND}" /etc/environment; then
+	if grep -q "${FIND}" "${FILE}"; then
 		# Replace the existing value of the variable
-		sudo sed -i "s/${FIND}.*/${REPLACE}/g" /etc/environment
+		sudo sed -i "s/${FIND}.*/${REPLACE}/g" "${FILE}"
 	else
 		# Write a new line with the variable
-		echo "${REPLACE}" | sudo tee -a /etc/environment
+		echo "${REPLACE}" | sudo tee -a "${FILE}"
 	fi
 }
 
-search_and_replace "GTK_THEME=" "GTK_THEME=Arc-Dark"
-search_and_replace "QT_STYLE_OVERRIDE=" "QT_STYLE_OVERRIDE=kvantum"
-search_and_replace "EDITOR=" "EDITOR=nano"
-search_and_replace "VISUAL=" "VISUAL=nano"
+# Environment variables
+search_and_replace "GTK_THEME=" "GTK_THEME=Arc-Dark" "/etc/environment"
+search_and_replace "QT_STYLE_OVERRIDE=" "QT_STYLE_OVERRIDE=kvantum" "/etc/environment"
+search_and_replace "EDITOR=" "EDITOR=nano" "/etc/environment"
+search_and_replace "VISUAL=" "VISUAL=nano" "/etc/environment"
 
 echo
 tput setaf 2
