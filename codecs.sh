@@ -19,7 +19,7 @@ echo "##########################################################################
 tput sgr0
 echo
 
-sudo pacman -S --needed jasper lame libdca libdv gst-libav libtheora libvorbis libxv wavpack x264 xvidcore dvd+rw-tools dvdauthor dvgrab libmad libmpeg2 libdvdcss libdvdread libdvdnav exfatprogs a52dec faac faad2 flac gmtk
+sudo pacman -S --noconfirm --needed jasper lame libdca libdv gst-libav libtheora libvorbis libxv wavpack x264 xvidcore dvd+rw-tools dvdauthor dvgrab libmad libmpeg2 libdvdcss libdvdread libdvdnav a52dec faac faad2 flac gmtk
 
 echo
 tput setaf 2
