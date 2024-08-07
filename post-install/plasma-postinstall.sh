@@ -39,7 +39,7 @@ SDDM_THEME_CONF="/usr/share/sddm/themes/${SDDM_THEME}/theme.conf.user"
 SDDM_BG="/usr/share/backgrounds/AbS-Wallpapers/sddm_bg.jpg"
 
 echo "[*] Sddm settings..."
-mkdir -p /etc/sddm.conf.d
+sudo mkdir -p /etc/sddm.conf.d
 sudo tee "${SDDM_CONF}" <<EOF
 [Autologin]
 Relogin=false
