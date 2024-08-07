@@ -38,7 +38,7 @@ SDDM_FONT="Noto Sans,10,-1,0,400,0,0,0,0,0,0,0,0,0,0,1"
 SDDM_THEME_CONF="/usr/share/sddm/themes/${SDDM_THEME}/theme.conf.user"
 SDDM_BG="/usr/share/backgrounds/AbS-Wallpapers/sddm_bg.jpg"
 
-echo "[*] Sddm settings..."
+printf "[*] Sddm settings...\n"
 sudo mkdir -p /etc/sddm.conf.d
 sudo tee "${SDDM_CONF}" <<EOF
 [Autologin]
@@ -68,14 +68,14 @@ EOF
 
 # --------------------------------------------------
 
-echo "[*] Installing Plasma dotfiles..."
+printf "\n[*] Installing Plasma dotfiles...\n"
 cp -rf "${CURRENT_DIR}"/../Personal/settings/plasma/.config ~/
 cp -rf "${CURRENT_DIR}"/../Personal/settings/plasma/.local ~/
 sudo cp -rf "${CURRENT_DIR}"/../Personal/settings/plasma/usr /
 
 # -------------------------------------------------
 
-echo "[*] Setting system fonts..."
+printf "\n[*] Setting system fonts...\n"
 kwriteconfig6 --file kdeglobals --group "General" --key "font" "Noto Sans,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 kwriteconfig6 --file kdeglobals --group "General" --key "fixed" "Hack,10,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
 kwriteconfig6 --file kdeglobals --group "General" --key "smallestReadableFont" "Noto Sans,8,-1,5,400,0,0,0,0,0,0,0,0,0,0,1"
@@ -88,7 +88,7 @@ kwriteconfig6 --file kdeglobals --group "General" --key "XftSubPixel" "rgb"
 
 # -------------------------------------------------
 
-echo "[*] Setting colors and themes..."
+printf "\n[*] Setting colors and themes...\n"
 
 # Global theme
 plasma-apply-lookandfeel -a "${LOOKANDFEEL}"      # lookandfeeltool -a "${LOOKANDFEEL}"
@@ -141,7 +141,7 @@ sudo kwriteconfig6 --file ksplashrc --group "KSplash" --key "Theme" "None"
 
 # -------------------------------------------------
 
-echo "[*] Setting dark GTK..."
+printf "\n[*] Setting dark GTK...\n"
 function set_dark_gtk {
 	local gtk3_settings=~/.config/gtk-3.0/settings.ini
 	local gtk4_settings=~/.config/gtk-4.0/settings.ini
@@ -168,12 +168,12 @@ set_dark_gtk
 
 # -------------------------------------------------
 
-echo "[*] Setting wallpaper image..."
+printf "\n[*] Setting wallpaper...\n"
 plasma-apply-wallpaperimage "${DESKTOP_BG}"
 
 # -------------------------------------------------
 
-echo "[*] Setting screen locking appearance..."
+printf "\n[*] Setting screen locking appearance...\n"
 LOCK_IMAGE="/usr/share/backgrounds/AbS-Wallpapers/sddm_bg.jpg"
 LOCK_PRVIEWIMAGE="/usr/share/backgrounds/AbS-Wallpapers/sddm_bg.jpg"
 kwriteconfig6 --file kscreenlockerrc --group "Greeter" --group "Wallpaper" --group "org.kde.image" --group "General" --key "Image" "${LOCK_IMAGE}"
@@ -181,7 +181,7 @@ kwriteconfig6 --file kscreenlockerrc --group "Greeter" --group "Wallpaper" --gro
 
 # -------------------------------------------------
 
-echo "[*] Setting services to be shown in the context menu..."
+printf "\n[*] Setting services to be shown in the context menu...\n"
 kwriteconfig6 --file kservicemenurc --group "Show" --key OpenAsRootKDE5 true
 kwriteconfig6 --file kservicemenurc --group "Show" --key compressfileitemaction true
 kwriteconfig6 --file kservicemenurc --group "Show" --key diff false
@@ -206,7 +206,7 @@ kwriteconfig6 --file kservicemenurc --group "Show" --key wallpaperfileitemaction
 
 # -------------------------------------------------
 
-echo "[*] Setting keyboard layout..."
+printf "\n[*] Setting keyboard layout...\n"
 kwriteconfig6 --file kxkbrc --group "Layout" --key "DisplayNames" ","
 kwriteconfig6 --file kxkbrc --group "Layout" --key "LayoutList" "fr,ara"
 kwriteconfig6 --file kxkbrc --group "Layout" --key "Options" "grp:win_space_toggle"
@@ -216,21 +216,21 @@ kwriteconfig6 --file kxkbrc --group "Layout" --key "VariantList" ",azerty"
 
 # -------------------------------------------------
 
-echo "[*] Setting touchpad options..."
+printf "\n[*] Setting touchpad options...\n"
 kwriteconfig6 --file touchpadxlibinputrc --group "AlpsPS/2 ALPS GlidePoint" --key "scrollEdge" "true"
 kwriteconfig6 --file touchpadxlibinputrc --group "AlpsPS/2 ALPS GlidePoint" --key "scrollTwoFinger" "false"
 kwriteconfig6 --file touchpadxlibinputrc --group "AlpsPS/2 ALPS GlidePoint" --key "tapToClick" "true"
 
 # -------------------------------------------------
 
-echo "[*] Setting default applications..."
+printf "\n[*] Setting default applications...\n"
 kwriteconfig6 --file kdeglobals --group "General" --key "BrowserApplication" "brave-browser.desktop"
 kwriteconfig6 --file kdeglobals --group "General" --key "TerminalApplication" "alacritty"
 kwriteconfig6 --file kdeglobals --group "General" --key "TerminalService" "Alacritty.desktop"
 
 # -------------------------------------------------
 
-echo "[*] Setting application settings..."
+printf "\n[*] Setting application settings...\n"
 kwriteconfig6 --file yakuakerc --group "Appearance" --key "Skin" "arc-dark"
 kwriteconfig6 --file yakuakerc --group "Dialogs" --key "FirstRun" false
 kwriteconfig6 --file yakuakerc --group "Window" --key "KeepAbove" false
