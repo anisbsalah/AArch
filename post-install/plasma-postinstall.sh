@@ -172,11 +172,6 @@ set_dark_gtk
 
 # -------------------------------------------------
 
-printf "\n[*] Setting wallpaper...\n"
-plasma-apply-wallpaperimage "${DESKTOP_BG}"
-
-# -------------------------------------------------
-
 printf "\n[*] Setting screen locking appearance...\n"
 LOCK_IMAGE="/usr/share/backgrounds/AbS-Wallpapers/sddm_bg.jpg"
 LOCK_PRVIEWIMAGE="/usr/share/backgrounds/AbS-Wallpapers/sddm_bg.jpg"
@@ -243,6 +238,11 @@ kwriteconfig6 --file konsolerc --group "Desktop Entry" --key "DefaultProfile" "A
 kwriteconfig6 --file konsolerc --group "General" --key "ConfigVersion" 1
 kwriteconfig6 --file konsolerc --group "MainWindow" --key "MenuBar" Disabled
 kwriteconfig6 --file konsolerc --group "MainWindow" --key "ToolBarsMovable" Disabled
+
+# -------------------------------------------------
+
+printf "\n[*] Setting wallpaper...\n"
+plasma-apply-wallpaperimage "${DESKTOP_BG}"
 
 # --------------------------------------------------
 
